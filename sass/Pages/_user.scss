@@ -1,0 +1,97 @@
+.user {
+  background-color: rgba(3, 117, 248, 0.717);
+  //   height: 80vh;
+  width: 80%;
+  //   padding: 8rem 2rem;
+  text-align: center;
+  &_con {
+    display: flex;
+    width: 100%;
+    // background-color: aqua;
+    padding: 0.5rem;
+  }
+  &_list {
+    width: 30%;
+    padding: 1rem;
+    // background-color: green;
+    &Item {
+      width: 100%;
+      margin: 0.5rem 0rem;
+      background-color: rgba(255, 228, 196, 0.824);
+      &:hover {
+        background-color: rgb(255, 228, 196);
+      }
+      border-radius: 10px;
+      cursor: pointer;
+    }
+  }
+}
+.avatar {
+  &_list {
+    height: 2rem;
+    width: 2rem;
+    margin: 0rem 1rem;
+  }
+  &_profile {
+    height: 10rem;
+    width: 10rem;
+    margin: 0.5rem;
+  }
+}
+//userProfile
+
+.user {
+  &_profile {
+    width: 70%;
+    // background-color: blue;
+    padding: 1rem;
+    &-main {
+      margin: 0.5rem;
+      padding: 0.5rem;
+      //   background-color: rgba(0, 0, 255, 0.381);
+      background-color: rgba(255, 228, 196, 0.941);
+    }
+  }
+  &_info {
+    display: flex;
+    margin: 0rem 0rem 0.5rem 0rem;
+
+    &-box1 {
+      width: 35%;
+      background-color: white;
+      margin-right: 1rem;
+    }
+    &-box2 {
+      width: 65%;
+      //   background-color: lightblue;
+      background-color: white;
+    }
+  }
+
+  &_about {
+    // background-color: green;
+    background-color: white;
+    min-height: 25vh;
+
+    &-text {
+    }
+  }
+}
+.detail {
+  //   background-color: orange;
+  margin: 0.4rem 0rem;
+  display: flex;
+  flex-direction: column;
+  &_head {
+    // background-color: aqua;
+    width: 100%;
+    font-weight: 500;
+    font-size: 1.1rem;
+  }
+  &_text {
+    // background-color: red;
+    width: 100%;
+    background-color: rgba(1, 47, 255, 0.098);
+    padding: 0.5rem;
+  }
+}

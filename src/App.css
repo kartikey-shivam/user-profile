@@ -1,0 +1,85 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+.heading_tertiary {
+  text-transform: uppercase;
+  text-align: center;
+  background-color: lightblue;
+  border-radius: 10px;
+  margin: 0.5rem 0rem;
+  padding: 0.5rem 0; }
+
+.user {
+  background-color: rgba(3, 117, 248, 0.717);
+  width: 80%;
+  text-align: center; }
+  .user_con {
+    display: flex;
+    width: 100%;
+    padding: 0.5rem; }
+  .user_list {
+    width: 30%;
+    padding: 1rem; }
+    .user_listItem {
+      width: 100%;
+      margin: 0.5rem 0rem;
+      background-color: rgba(255, 228, 196, 0.824);
+      border-radius: 10px;
+      cursor: pointer; }
+      .user_listItem:hover {
+        background-color: bisque; }
+
+.avatar_list {
+  height: 2rem;
+  width: 2rem;
+  margin: 0rem 1rem; }
+
+.avatar_profile {
+  height: 10rem;
+  width: 10rem;
+  margin: 0.5rem; }
+
+.user_profile {
+  width: 70%;
+  padding: 1rem; }
+  .user_profile-main {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    background-color: rgba(255, 228, 196, 0.941); }
+
+.user_info {
+  display: flex;
+  margin: 0rem 0rem 0.5rem 0rem; }
+  .user_info-box1 {
+    width: 35%;
+    background-color: white;
+    margin-right: 1rem; }
+  .user_info-box2 {
+    width: 65%;
+    background-color: white; }
+
+.user_about {
+  background-color: white;
+  min-height: 25vh; }
+
+.detail {
+  margin: 0.4rem 0rem;
+  display: flex;
+  flex-direction: column; }
+  .detail_head {
+    width: 100%;
+    font-weight: 500;
+    font-size: 1.1rem; }
+  .detail_text {
+    width: 100%;
+    background-color: rgba(1, 47, 255, 0.098);
+    padding: 0.5rem; }
+
+.App {
+  background-color: #92b2dd;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
