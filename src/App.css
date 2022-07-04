@@ -10,6 +10,9 @@
   border-radius: 10px;
   margin: 0.5rem 0rem;
   padding: 0.5rem 0; }
+  @media only screen and (max-width: 75em) {
+    .heading_tertiary {
+      font-size: 1rem !important; } }
 
 .user {
   background-color: rgba(3, 117, 248, 0.717);
@@ -19,13 +22,37 @@
     display: flex;
     width: 100%;
     padding: 0.5rem; }
+    @media only screen and (max-width: 56.25em) {
+      .user_con {
+        display: flex;
+        flex-direction: column !important; } }
   .user_list {
     width: 30%;
     padding: 1rem; }
+    @media only screen and (max-width: 75em) {
+      .user_list {
+        padding: 0.6rem; } }
+    @media only screen and (max-width: 56.25em) {
+      .user_list {
+        width: 100% !important; } }
+    @media only screen and (max-width: 37.5em) {
+      .user_list {
+        padding: 0.4rem; } }
     .user_list-sub {
       max-height: 70vh;
       overflow-y: scroll;
       margin-top: 1rem; }
+      @media only screen and (max-width: 75em) {
+        .user_list-sub {
+          margin-top: 0.8rem; } }
+      @media only screen and (max-width: 56.25em) {
+        .user_list-sub {
+          justify-content: center;
+          height: 30vh;
+          width: 100%; } }
+      @media only screen and (max-width: 37.5em) {
+        .user_list-sub {
+          height: 30vh; } }
       .user_list-sub::-webkit-scrollbar {
         display: none; }
     .user_listItem {
@@ -36,24 +63,61 @@
       cursor: pointer; }
       .user_listItem:hover {
         background-color: bisque; }
+      @media only screen and (max-width: 75em) {
+        .user_listItem-name {
+          font-size: 0.9rem !important; } }
+      @media only screen and (max-width: 37.5em) {
+        .user_listItem-name {
+          font-size: 0.7rem; } }
 
 .avatar_list {
   height: 2rem;
   width: 2rem;
   margin: 0rem 1rem; }
+  @media only screen and (max-width: 75em) {
+    .avatar_list {
+      height: 1.8rem;
+      width: 1.8rem;
+      margin: 0rem 0.8rem; } }
 
 .avatar_profile {
   height: 10rem;
   width: 10rem;
   margin: 0.5rem; }
+  @media only screen and (max-width: 75em) {
+    .avatar_profile {
+      height: 8rem;
+      width: 8rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .avatar_profile {
+      height: 4rem;
+      width: 4rem;
+      margin: 0.2rem 0.2rem; } }
 
 .user_profile {
   width: 70%;
   padding: 1rem; }
+  @media only screen and (max-width: 75em) {
+    .user_profile {
+      padding: 0.6rem; } }
+  @media only screen and (max-width: 56.25em) {
+    .user_profile {
+      width: 100%; } }
   .user_profile-main {
     margin: 0.5rem;
     padding: 0.5rem;
+    min-height: 70vh;
     background-color: rgba(255, 228, 196, 0.941); }
+    @media only screen and (max-width: 75em) {
+      .user_profile-main {
+        margin: 0.4rem;
+        padding: 0.4rem;
+        min-height: 60vh; } }
+    @media only screen and (max-width: 56.25em) {
+      .user_profile-main {
+        margin: 0.3rem;
+        padding: 0.3rem;
+        min-height: 30vh; } }
 
 .user_info {
   display: flex;
@@ -62,6 +126,15 @@
     width: 35%;
     background-color: white;
     margin-right: 1rem; }
+    @media only screen and (max-width: 75em) {
+      .user_info-box1_name {
+        font-size: 0.8rem !important; } }
+    @media only screen and (max-width: 56.25em) {
+      .user_info-box1_name {
+        font-size: 0.6rem !important; } }
+    @media only screen and (max-width: 37.5em) {
+      .user_info-box1_name {
+        font-size: 0.4rem !important; } }
   .user_info-box2 {
     width: 65%;
     background-color: white; }
@@ -69,19 +142,82 @@
 .user_about {
   background-color: white;
   min-height: 25vh; }
+  @media only screen and (max-width: 56.25em) {
+    .user_about {
+      min-height: 10vh; } }
+  @media only screen and (max-width: 75em) {
+    .user_about-text {
+      font-size: 0.8rem !important; } }
+  @media only screen and (max-width: 56.25em) {
+    .user_about-text {
+      font-size: 0.6rem !important; } }
+  @media only screen and (max-width: 37.5em) {
+    .user_about-text {
+      font-size: 0.4rem !important; } }
 
 .detail {
   margin: 0.4rem 0rem;
   display: flex;
   flex-direction: column; }
+  @media only screen and (max-width: 75em) {
+    .detail {
+      margin: 0.3rem 0rem !important; } }
+  @media only screen and (max-width: 56.25em) {
+    .detail {
+      margin: 0.2rem 0rem !important; } }
+  @media only screen and (max-width: 37.5em) {
+    .detail {
+      margin: 0.1rem 0rem !important;
+      padding: 0.4rem 0.5rem !important; } }
   .detail_head {
     width: 100%;
     font-weight: 500;
     font-size: 1.1rem; }
+    @media only screen and (max-width: 75em) {
+      .detail_head {
+        font-size: 0.9rem; } }
+    @media only screen and (max-width: 56.25em) {
+      .detail_head {
+        font-size: 0.8rem; } }
+    @media only screen and (max-width: 37.5em) {
+      .detail_head {
+        font-size: 0.6rem; } }
   .detail_text {
     width: 100%;
     background-color: rgba(1, 47, 255, 0.098);
     padding: 0.5rem; }
+    @media only screen and (max-width: 75em) {
+      .detail_text {
+        font-size: 0.7rem;
+        padding: 0.4rem; } }
+    @media only screen and (max-width: 56.25em) {
+      .detail_text {
+        font-size: 0.6rem; } }
+    @media only screen and (max-width: 37.5em) {
+      .detail_text {
+        font-size: 0.4rem;
+        padding: 0.2rem; } }
+
+.blank {
+  height: 65vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 500; }
+  @media only screen and (max-width: 75em) {
+    .blank {
+      font-size: 1.6rem; } }
+  @media only screen and (max-width: 56.25em) {
+    .blank {
+      font-size: 1.2rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .blank {
+      font-size: 0.8rem; } }
+
+.active_class {
+  background-color: red !important; }
 
 .App {
   background-color: #92b2dd;

@@ -6,53 +6,67 @@ import { Container } from "@mui/system";
 import Grid from "@mui/material/Grid";
 import Avatar from "./assets/avatar.svg";
 import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
 function Profile(props) {
   return (
-    <div className="user_info">
-      <Grid className="user_info-box1">
-        <img src={Avatar} alt="" className="avatar_profile" />
-        <Typography>@kartikey</Typography>
-        <Typography>Web developer</Typography>
-      </Grid>
-      <Grid className="user_info-box2">
-        <ListItem className="detail">
-          <Typography variant="p" className="detail_head">
-            Full Name
+    <div>
+      <div className="user_info">
+        <Grid className="user_info-box1">
+          <img src={Avatar} alt="" className="avatar_profile" />
+          <Typography className="user_info-box1_name">
+            {props.Username}
           </Typography>
-          <Typography variant="p" className="detail_text">
-            shivam saraswat
+          <Typography className="user_info-box1_name">
+            {props.CreatedAt.slice(0, 10)}
           </Typography>
-        </ListItem>
-        <ListItem className="detail">
-          <Typography variant="p" className="detail_head">
-            Job Title
-          </Typography>
-          <Typography variant="p" className="detail_text">
-            web developer
-          </Typography>
-        </ListItem>
-        <ListItem className="detail">
-          <Typography variant="p" className="detail_head">
-            Email
-          </Typography>
-          <Typography variant="p" className="detail_text">
-            {" "}
-            kartikey.saraswat301@gmail.com
-          </Typography>
-        </ListItem>
-      </Grid>
+        </Grid>
+        <Grid className="user_info-box2">
+          <ListItem className="detail">
+            <Typography variant="p" className="detail_head">
+              Full Name
+            </Typography>
+            <Typography variant="p" className="detail_text">
+              {`${props.FirstName}` + " " + `${props.LastName}`}
+            </Typography>
+          </ListItem>
+          <ListItem className="detail">
+            <Typography variant="p" className="detail_head">
+              Job Title
+            </Typography>
+            <Typography variant="p" className="detail_text">
+              {props.JobTitle}
+            </Typography>
+          </ListItem>
+          <ListItem className="detail">
+            <Typography variant="p" className="detail_head">
+              Email
+            </Typography>
+            <Typography variant="p" className="detail_text">
+              {" "}
+              {props.Email}
+            </Typography>
+          </ListItem>
+        </Grid>
+      </div>
+      <Container className="user_about">
+        <Typography variant="p" className="detail_head">
+          Bio
+        </Typography>
+        <Typography className="user_about-text">{props.Bio}</Typography>
+      </Container>
     </div>
   );
 }
 function ListTemp(props) {
   return (
-    <ListItem className="user_listItem">
+    <ListItem className="user_listItem" onClick={props.Clicked}>
       <img src={Avatar} className="avatar_list" />
-      <Typography>{props.name}</Typography>
+      <Typography className="user_listItem-name">{props.name}</Typography>
     </ListItem>
   );
 }
 export default function User() {
+  const Dispatch = useDispatch();
   const [userList, setUserList] = useState([]);
   useEffect(() => {
     axios
@@ -64,8 +78,31 @@ export default function User() {
   }, []);
   console.log(userList);
   const listUser = userList.map((user) => {
-    return <ListTemp name={user.profile.firstName} />;
+    return (
+      <ListTemp
+        name={user.profile.firstName}
+        Clicked={() => {
+          Dispatch({
+            type: "updateData",
+            bio: user.Bio,
+            avt: user.avatar,
+            createdAt: user.createdAt,
+            id: user.id,
+            jobTitle: user.jobTitle,
+            email: user.profile.email,
+            firstName: user.profile.firstName,
+            lastName: user.profile.lastName,
+            usr: user.profile.username,
+          });
+        }}
+      />
+    );
   });
+  const { status, Bio, id, createdAt, jobTitle, profile } = useSelector(
+    (state) => state.custom
+  );
+  const { email, firstName, lastName, username } = profile;
+
   return (
     <Container className="user">
       <Grid Container spacing={3} className="user_con">
@@ -86,13 +123,23 @@ export default function User() {
             user profile
           </Typography>
           <Container className="user_profile-main">
-            <Profile />
-            <Container className="user_about">
-              <Typography variant="p" className="detail_head">
-                About
-              </Typography>
-              <Typography className="user_about-text">Lorem I</Typography>
-            </Container>
+            {status ? (
+              <Profile
+                Username={username}
+                FirstName={firstName}
+                LastName={lastName}
+                JobTitle={jobTitle}
+                Bio={Bio}
+                CreatedAt={createdAt}
+                Email={email}
+              />
+            ) : (
+              <div className="blank">
+                No user selected!
+                <br />
+                Select the user to get his/her info.
+              </div>
+            )}
           </Container>
         </Grid>
       </Grid>
