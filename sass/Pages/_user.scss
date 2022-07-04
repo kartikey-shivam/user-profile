@@ -13,15 +13,23 @@
   &_list {
     width: 30%;
     padding: 1rem;
+    &-sub {
+      max-height: 70vh;
+      overflow-y: scroll;
+      margin-top: 1rem;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
     // background-color: green;
     &Item {
-      width: 100%;
-      margin: 0.5rem 0rem;
+      width: 60%;
+      margin: 0.5rem -0.5rem 0.5rem 0rem;
       background-color: rgba(255, 228, 196, 0.824);
       &:hover {
         background-color: rgb(255, 228, 196);
       }
-      border-radius: 10px;
+      border-radius: 15px;
       cursor: pointer;
     }
   }
