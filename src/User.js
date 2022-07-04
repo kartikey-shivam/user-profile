@@ -6,6 +6,8 @@ import { Container } from "@mui/system";
 import Grid from "@mui/material/Grid";
 import Avatar from "./assets/avatar.svg";
 import axios from "axios";
+import ReactLoading from "react-loading";
+import { Backdrop, CircularProgress } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 function Profile(props) {
   return (
@@ -65,6 +67,7 @@ function ListTemp(props) {
     </ListItem>
   );
 }
+
 export default function User() {
   const Dispatch = useDispatch();
   const [userList, setUserList] = useState([]);
@@ -74,6 +77,9 @@ export default function User() {
       .then((responseData) => {
         const loadedTask = responseData.data;
         setUserList(loadedTask);
+        Dispatch({
+          type: "updateActive",
+        });
       });
   }, []);
   console.log(userList);
@@ -98,11 +104,10 @@ export default function User() {
       />
     );
   });
-  const { status, Bio, id, createdAt, jobTitle, profile } = useSelector(
+  const { status, active, Bio, id, createdAt, jobTitle, profile } = useSelector(
     (state) => state.custom
   );
   const { email, firstName, lastName, username } = profile;
-
   return (
     <Container className="user">
       <Grid Container spacing={3} className="user_con">
@@ -113,7 +118,23 @@ export default function User() {
           >
             users list
           </Typography>
-          <div className="user_list-sub">{listUser}</div>
+          <div className="user_list-sub">
+            {active ? (
+              listUser
+            ) : (
+              <div>
+                <Backdrop
+                  sx={{
+                    color: "#fff",
+                    zIndex: (theme) => theme.zIndex.drawer + 1,
+                  }}
+                  open
+                >
+                  <CircularProgress color="inherit" />
+                </Backdrop>
+              </div>
+            )}
+          </div>
         </Grid>
         <Grid item className="user_profile">
           <Typography

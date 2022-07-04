@@ -29,4 +29,7 @@ export const customReducer = createReducer(initialState, {
     state.profile.username = action.usr;
     state.active = true;
   },
+  updateActive: (state, action) => {
+    state.active = true;
+  },
 });
